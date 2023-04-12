@@ -38,7 +38,7 @@ message_history = [
                                  "Give me Penetration Test Report writeups for each vulnerability I give you. "
                                  "Provide a Description, Background, Risk, Impact and remediaton section. "
                                  "All respsonses must be highly technical in nature. show the commands "
-                                 "used to check for this issue. Also include references of where you are getting this information."}]
+                                 "used to check for this issue."}]
 
 def chat_with_gpt3(message_history):
     """Chat with GPT-3 API and return the response content"""
