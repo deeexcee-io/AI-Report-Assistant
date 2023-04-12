@@ -30,7 +30,7 @@ print(art)
 time.sleep(1)
 
 # Set OpenAI API key
-openai.api_key = "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"
+openai.api_key = "---INSERT API KEY HERE---"
 
 # Initialize message history
 message_history = [
