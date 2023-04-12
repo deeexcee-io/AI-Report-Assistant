@@ -1,7 +1,13 @@
 # AI-Report-Assistant
-Harness the Power of AI for all your reporting needs.
+Harness the Power of AI for all your reporting needs. 
 
-Mainly came about as I wanted to generate a decent Knowledge Base and trying to save time when Googling for issues.
+Kind of, it works but whether it is of use to you is a different matter.
+
+![image](https://user-images.githubusercontent.com/130473605/231473128-7e828797-f67f-4125-ae62-7554d98c6372.png)
+
+Mainly came about as I wanted to generate a decent Knowledge Base for reporting and trying to save time when Googling for issues as not to use Nessus Writeups.
+
+Like everything I ever do, it goes from an idea to spending more time than I should trying to get it to work.
 
 Its just a Python tool for interacting with the chatgpt api. 
 * Uses the gpt-3.5-turbo model. 
@@ -24,20 +30,19 @@ Run with `python3 Report-Assist.py`
 ## Nessus File
 If passing a nessus file choose option 2 and give it the filename.
 
-![image](https://user-images.githubusercontent.com/130473605/231190133-792e141b-490e-4660-afcc-f790f4c4db15.png)
+![image](https://user-images.githubusercontent.com/130473605/231475521-d152fc18-e8e8-4276-ae53-9bc44d368810.png)
 
 
-issues.txt file should then be in current directory.
+Will output TXT file with Issues in Current Directory
 
-![image](https://user-images.githubusercontent.com/130473605/231189144-aca8f1f6-f6af-478a-b418-7c6f1231b717.png)
+![image](https://user-images.githubusercontent.com/130473605/231475990-a2b8c6ef-6c9e-401d-8be2-b8d3bfa3b746.png)
 
 
 ## Interactive Mode
 
 Try to be specific for best results. If choosing option 1 just give it the issue ie `>: SMB Signing enabled but not required on Windows 10 host` 
 
-![image](https://user-images.githubusercontent.com/130473605/231189885-3081e673-2ef5-40a6-ad71-68c7213fc83e.png)
-
+![image](https://user-images.githubusercontent.com/130473605/231473879-dd3f4980-c455-4a14-881f-119569f04846.png)
 
 ***NOTE***
 
