@@ -18,6 +18,10 @@ Its just a Python tool for interacting with the chatgpt api.
 
 Sign into chatgpt and get an API Key - You get $5 free. It costs about $0.002 per API request so free credit will probably expire before you use up that amount.
 
+## TODO
+
+Needs more error handling and colours, everyone likes a coloured output.
+
 # How to use
 
 You can use it interactively to get writeups for a single issue or pass it a .nessus file and it will parse it, pulling all Critical, High, Medium and Low Issues then using the pluginName as input to get writeups. 
