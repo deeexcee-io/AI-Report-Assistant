@@ -1,5 +1,5 @@
 # AI-Report-Assistant
-Harness the Power of AI for all your reporting needs. 
+🛸 Harness the Power of AI for all your reporting needs 🚀
 
 Kind of, it works but whether it is of use to you is a different matter.
 
@@ -30,6 +30,10 @@ Sign into chatgpt and get an API Key - You get $5 free. It costs about $0.002 pe
 
 Doubtful, I have minimal developer experience. This was done to serve a purpose and to improve my python understanding. If you have any issues with the code feel free to re-write it.
 
+## Is it well tested?
+
+Works on my kali VM 🤷🏼‍♂️
+
 ## TODO
 
 Needs more error handling and colours, everyone likes a coloured output. Possibly add some extra parameters to use for the writeups as currently it just uses the pluginName from the .nessus xml file. 
@@ -42,6 +46,20 @@ All issues are then saved in an .txt file.
 
 
 Run with `python3 Report-Assist.py`
+
+## Can it be tweaked?
+
+100% - See below. This is sent with every request, it tells chatgpt what is expected. 
+
+```python
+# Initialize message history
+message_history = [
+    {"role": "user", "content": "You are a penetration test report writing technical assistant. "
+                                 "Give me Penetration Test Report writeups for each vulnerability I give you. "
+                                 "Provide a Description, Background, Risk, Impact and remediaton section. "
+                                 "All respsonses must be highly technical in nature. show the commands "
+                                 "used to check for this issue."}]
+```
 
 ## Nessus File
 If passing a nessus file choose option 2 and give it the filename.
