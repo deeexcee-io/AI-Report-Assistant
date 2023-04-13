@@ -28,7 +28,7 @@ Sign into chatgpt and get an API Key - You get $5 free. It costs about $0.002 pe
 
 ## Is it well built?
 
-Doubtful, I have minimal developer experience. This was done to server a purpose and to improve my python understanding. If you have any issues with the code feel free to re-write it.
+Doubtful, I have minimal developer experience. This was done to serve a purpose and to improve my python understanding. If you have any issues with the code feel free to re-write it.
 
 ## TODO
 
