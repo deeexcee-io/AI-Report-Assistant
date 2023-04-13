@@ -66,19 +66,19 @@ message_history = [
 ## Nessus File
 If passing a nessus file choose option 2 and give it the filename.
 
-![image](https://user-images.githubusercontent.com/130473605/231475521-d152fc18-e8e8-4276-ae53-9bc44d368810.png)
+![image](https://user-images.githubusercontent.com/130473605/231700663-9aae3e84-d863-453f-b065-4ec321c7f207.png)
 
 
 Will output .txt file with Issues in Current Directory
 
-![image](https://user-images.githubusercontent.com/130473605/231475990-a2b8c6ef-6c9e-401d-8be2-b8d3bfa3b746.png)
+![image](https://user-images.githubusercontent.com/130473605/231700883-36258bc4-8691-4503-a5b5-8f3df8cf8f13.png)
 
 
 ## Interactive Mode
 
 Try to be specific for best results. If choosing option 1 just give it the issue ie `>: SMB Signing enabled but not required on Windows 10 host` 
 
-![image](https://user-images.githubusercontent.com/130473605/231473879-dd3f4980-c455-4a14-881f-119569f04846.png)
+![image](https://user-images.githubusercontent.com/130473605/231701458-6c319918-12bc-48e4-98ef-a7a8b03f605b.png)
 
 ***NOTE***
 
