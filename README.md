@@ -24,6 +24,8 @@ Its just a Python scipt for interacting with the chatgpt api.
 
 `pip install openai`
 
+## You need an openAI API Key
+
 Sign into chatgpt and get an API Key - You get $5 free. It costs about $0.002 per API request so free credit will probably expire before you use up that amount.
 
 ## Is it well built?
