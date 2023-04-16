@@ -80,7 +80,6 @@ def get_plugin_name(nessus_file):
 def search_for_vulns():
     """Search for vulnerabilities using GPT-3 API"""
     while True:
-        print("\nSearch for Vulns Selected\nEnter a search term, be specific for best results")
         user_input = input("---Interactive--->: ")
         message_history.append({"role": "user", "content": f"{user_input}"})
         reply_answer = chat_with_gpt3(message_history)
@@ -108,6 +107,7 @@ def main():
         print("Do you want to search for Vulnerabilites or Import a Nessus File?\n\n")
         choice = input("""(1) - Search for Vulns \n(2) - Import Nessus File \n\n(1) or (2) : """)
         if choice == "1":
+                print("\nSearch for Vulns Selected\nEnter a search term, be specific for best results")
                 search_for_vulns()
         if choice == "2":
                 import_nessus_file()
