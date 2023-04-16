@@ -83,6 +83,11 @@ Try to be specific for best results. If choosing option 1 just give it the issue
 ![image](https://user-images.githubusercontent.com/130473605/232335023-3c5a3f03-43b3-4359-a9e5-4dd9a91ca8d6.png)
 
 
+Return to Menu added
+
+![image](https://user-images.githubusercontent.com/130473605/232338593-37c67b3d-3e87-46dc-9640-421278255dc7.png)
+
+
 ***NOTE***
 
 Do not copy Verbatim - for obvious reasons, it can give sometimes you random information that isnt entirely correct
