@@ -3,7 +3,9 @@
 
 Kind of, it works but whether it is of use to you is a different matter.
 
-![image](https://user-images.githubusercontent.com/130473605/231473128-7e828797-f67f-4125-ae62-7554d98c6372.png)
+***Not a real API Key*** 😎
+![image](https://user-images.githubusercontent.com/130473605/232334604-70469370-682c-4c4f-9e69-7faafc1c439c.png)
+
 
 Mainly came about as I wanted to generate a decent Knowledge Base for reporting and trying to save time when Googling for issues as not to use Nessus Writeups.
 
@@ -66,19 +68,20 @@ message_history = [
 ## Nessus File
 If passing a nessus file choose option 2 and give it the filename.
 
-![image](https://user-images.githubusercontent.com/130473605/231700663-9aae3e84-d863-453f-b065-4ec321c7f207.png)
+![image](https://user-images.githubusercontent.com/130473605/232334859-9b71c4fd-e0db-4b43-89ca-1c4d5b456439.png)
 
 
 Will output .txt file with Issues in Current Directory
 
-![image](https://user-images.githubusercontent.com/130473605/231700883-36258bc4-8691-4503-a5b5-8f3df8cf8f13.png)
+![image](https://user-images.githubusercontent.com/130473605/232334883-94223cd6-0b96-40ea-8925-ebe1e9eb1fe8.png)
 
 
 ## Interactive Mode
 
 Try to be specific for best results. If choosing option 1 just give it the issue ie `>: SMB Signing enabled but not required on Windows 10 host` 
 
-![image](https://user-images.githubusercontent.com/130473605/231701458-6c319918-12bc-48e4-98ef-a7a8b03f605b.png)
+![image](https://user-images.githubusercontent.com/130473605/232335023-3c5a3f03-43b3-4359-a9e5-4dd9a91ca8d6.png)
+
 
 ***NOTE***
 
