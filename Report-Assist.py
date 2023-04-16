@@ -119,7 +119,7 @@ def search_for_vulns():
 
 def import_nessus_file():
     """Import Nessus XML file and generate AI generated report writeups"""
-    nessus_file = input("\n\nPlease enter filename: ")
+    nessus_file = input("\n\nPlease enter filename: (Must be in Current Working Directory) ")
     saved_file = input("\n\nPlease enter filename to save genearated output as: (i.e Inf-report.txt) ")
     plugin_names = get_plugin_name(nessus_file)
     print("\n\nCompiling AI Generated Report Writeups for: \n")
