@@ -10,7 +10,7 @@ art="""
               | |                       | |
               | |     Report            | |
               | |      Writing          | |
-              | |       Assistnat       | |
+              | |       Assistant       | |
               | |                       | |
               |  \_____________________/  |
               |___________________________|
@@ -53,6 +53,7 @@ def chat_with_gpt3(message_history):
     except openai.error.RateLimitError as e:
         print(f"Error: {e}")
         print("API is currently overloaded, your on a free plan so it can happen. Either try again or Upgrade (up to you )")
+        sys.exit()
     except KeyboardInterrupt:
         print("\n\n**** You want to quit huh?....No problem ****")
         time.sleep(1)
@@ -60,6 +61,7 @@ def chat_with_gpt3(message_history):
     except Exception as e:
         print(f"Error: {e}")
         print("An error occured, im out...")
+        sys.exit()
 
 def get_plugin_name(nessus_file):
     """Parse the Nessus XML file and return a list of plugin names"""
