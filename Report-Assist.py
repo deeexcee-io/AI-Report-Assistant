@@ -31,8 +31,9 @@ print(art)
 time.sleep(1)
 
 # Set OpenAI API key
-openai.api_key = "----INSERT API KEY HERE----"
+openai.api_key = "----INSERT API KEY HERE----"  # INSERT API KEY HERE, NOT BELOW!
 
+# Check API Key
 def check_api_key():
         if openai.api_key == "----INSERT API KEY HERE----":
             correct_APIKey = input("API Key Not Set - will be in the format sk-*********. Please enter it now: ")
