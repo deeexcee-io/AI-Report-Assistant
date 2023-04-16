@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 import sys
 import time
 import signal
+import re
 
 art="""
               ,---------------------------,
@@ -32,6 +33,25 @@ time.sleep(1)
 # Set OpenAI API key
 openai.api_key = "----INSERT API KEY HERE----"
 
+def check_api_key():
+    if openai.api_key == "----INSERT API KEY HERE----":
+        correct_APIKey = input("API Key Not Set - will be in the format sk-*********. Please enter it now: ")
+        print(f"\nAPI KEY: {correct_APIKey}")
+        input("\nPress Enter to continue....")
+        openai.api_key = correct_APIKey
+    else:
+        api_check = r"^sk-[a-zA-Z0-9]{49}$"
+        if re.match(api_check, openai.api_key):
+            print("\nLooks like you have added an API Key of the correct format...continuing")
+        else:
+            update_apiKey = input("API Key doesn't match the correct format, please re-enter it now \nin the format sk-***********: ")
+            print(f"API Key entered is: {update_apiKey}")
+            input("Press Enter to continue....")
+            openai.api_key = update_apiKey
+
+print("* - - - -  Technical Report Writing Assistant - - - - *\n")
+check_api_key()
+
 # Initialize message history
 message_history = [
     {"role": "user", "content": "You are a penetration test report writing technical assistant. "
@@ -50,6 +70,7 @@ def chat_with_gpt3(message_history):
         )
         reply_content = completion.choices[0].message.content
         return reply_content
+
     except openai.error.RateLimitError as e:
         print(f"Error: {e}")
         print("API is currently overloaded, you're on a free plan so it can happen. Either try again or Upgrade (up to you )")
@@ -67,6 +88,7 @@ def get_plugin_name(nessus_file):
     """Parse the Nessus XML file and return a list of plugin names"""
     tree = ET.parse(nessus_file)
     root = tree.getroot()
+    # Initialise an empty list
     plugin_names = []
     for report in root.findall("./Report"):
         for host in report.findall("./ReportHost"):
@@ -74,7 +96,9 @@ def get_plugin_name(nessus_file):
                 severity = item.find("risk_factor").text
                 if severity in ["Critical", "High", "Medium", "Low"]:
                     description_for_check = item.get("pluginName")
-                    plugin_names.append(description_for_check)
+                    # check for duplicates
+                    if description_for_check not in plugin_names:
+                        plugin_names.append(description_for_check)
     return plugin_names
 
 def search_for_vulns():
@@ -114,8 +138,7 @@ def signal_handler(signal, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 def main():
-        print("* - - - -  Technical Report Writing Assistant - - - - *\n")
-        print("Do you want to search for Vulnerabilites or Import a Nessus File?\n\n")
+        print("\nDo you want to search for Vulnerabilites or Import a Nessus File?\n\n")
         choice = input("""(1) - Search for Vulns \n(2) - Import Nessus File \n\n(1) or (2) : """)
         if choice == "1":
                 print("\nSearch for Vulns Selected\nEnter a search term, be specific for best results - Type \"exit\" to return to menu\n")
@@ -127,5 +150,6 @@ def main():
 
 if __name__ == '__main__':
         main()
+
 
               
