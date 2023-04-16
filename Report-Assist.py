@@ -34,20 +34,18 @@ time.sleep(1)
 openai.api_key = "----INSERT API KEY HERE----"
 
 def check_api_key():
-    if openai.api_key == "----INSERT API KEY HERE----":
-        correct_APIKey = input("API Key Not Set - will be in the format sk-*********. Please enter it now: ")
-        print(f"\nAPI KEY: {correct_APIKey}")
-        input("\nPress Enter to continue....")
-        openai.api_key = correct_APIKey
-    else:
-        api_check = r"^sk-[a-zA-Z0-9]{49}$"
-        if re.match(api_check, openai.api_key):
-            print("\nLooks like you have added an API Key of the correct format...continuing")
+        if openai.api_key == "----INSERT API KEY HERE----":
+            correct_APIKey = input("API Key Not Set - will be in the format sk-*********. Please enter it now: ")
+            openai.api_key = correct_APIKey
         else:
-            update_apiKey = input("API Key doesn't match the correct format, please re-enter it now \nin the format sk-***********: ")
-            print(f"API Key entered is: {update_apiKey}")
-            input("Press Enter to continue....")
-            openai.api_key = update_apiKey
+            api_check = r"^sk-[a-zA-Z0-9]{49}$"
+            if re.match(api_check, openai.api_key):
+                print("\nLooks like you have added an API Key of the correct format...continuing")
+            else:
+                update_apiKey = input("API Key doesn't match the correct format, please re-enter it now \nin the format sk-***********: ")
+                print(f"API Key entered is: {update_apiKey}")
+                input("Press Enter to continue....")
+                openai.api_key = update_apiKey
 
 print("* - - - -  Technical Report Writing Assistant - - - - *\n")
 check_api_key()
@@ -150,6 +148,7 @@ def main():
 
 if __name__ == '__main__':
         main()
+
 
 
               
