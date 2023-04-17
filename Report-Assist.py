@@ -4,6 +4,7 @@ import sys
 import time
 import signal
 import re
+import itertools
 
 art="""
               ,---------------------------,
@@ -31,7 +32,7 @@ print(art)
 time.sleep(1)
 
 # Set OpenAI API key
-openai.api_key = ""  # INSERT API KEY HERE, NOT BELOW!
+openai.api_key = "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"  # INSERT API KEY HERE, NOT BELOW!
 
 # Check API Key
 def check_api_key():
@@ -39,7 +40,7 @@ def check_api_key():
             correct_APIKey = input("API Key Not Set - will be in the format sk-*********. Please enter it now: ")
             openai.api_key = correct_APIKey
         else:
-            api_check = r"^sk-[a-zA-Z0-9]{49}$"
+            api_check = r"^sk-[a-zA-Z0-9]*$"
             if re.match(api_check, openai.api_key):
                 print("\nLooks like you have added an API Key of the correct format...continuing")
             else:
@@ -102,6 +103,7 @@ def get_plugin_name(nessus_file):
 
 def search_for_vulns():
     """Search for vulnerabilities using GPT-3 API"""
+    spinner = itertools.cycle(['-', '/', '|', '\\'])
     while True:
         user_input = input("---Interactive--->: ")
         if user_input == "exit":
@@ -110,10 +112,17 @@ def search_for_vulns():
             main()
         else:
             message_history.append({"role": "user", "content": f"{user_input}"})
+            print("Gathering Information from API....", end='', flush=True)
             reply_answer = chat_with_gpt3(message_history)
+            while not reply_answer:
+                print(next(spinner), end='', flush=True)
+                time.sleep(0.1)
+                print('\b', end='', flush=True)
+                reply_answer = chat_with_gpt3(message_history)
+            print('\b', end='', flush=True)
             print(reply_answer, "\n\n")
             print("\n* - - - Next Vulnerability - - - *\n\n[type \"exit\" to return to main menu]\n")
-   		    #Remove the last input to clean the history
+            # Remove the last input to clean the history
             del message_history[-1]
 
 def import_nessus_file():
