@@ -131,6 +131,7 @@ def import_nessus_file():
                         plugin_list = chat_with_gpt3(message_history)
                         print("\n********ISSUE********", x, plugin_list, file=f, sep='\n')
                         del message_history[-1]
+    print(f"Report {saved_file} has been generated.")
 
 def signal_handler(signal, frame):
     print('\n\nYou pressed Ctrl+C!')
