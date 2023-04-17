@@ -32,7 +32,7 @@ print(art)
 time.sleep(1)
 
 # Set OpenAI API key
-openai.api_key = "nhfjyj"  # INSERT API KEY HERE, NOT BELOW!
+openai.api_key = ""  # INSERT API KEY HERE, NOT BELOW!
 
 # Check API Key
 def check_api_key():
